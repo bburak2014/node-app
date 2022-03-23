@@ -1,0 +1,66 @@
+extend ../layout/main.layout.pug
+block styles
+ script(src='/js/add_product.js')
+
+
+
+block content 
+    .container.register.m-5
+        .row
+            h1.text-justify #{title}
+
+            .bs-example
+                form#uploadForm(action='/admin/add_product' method='post' enctype   =  "multipart/form-data" )
+                    .row 
+                        .form-group.col-12.col-md-4
+                            label(for='productName') name
+                            input#name.form-control(type='text' placeholder='name' required='' name='name')
+                        .form-group.col-12.col-md-4
+                            label(for='productName') product_type
+                            input#product_type.form-control(type='text' placeholder='product_type' required='' name='product_type')
+
+
+                        .form-group.col-12.col-md-4
+                            label(for='productName') product_group
+                            input#product_group.form-control(type='text' placeholder='product_group' required='' name='product_group')
+                    .row            
+                        .form-group.col-12.col-md-4
+                            label(for='productName') company
+                            input#company.form-control(type='text' placeholder='company' required='' name='company')
+
+                        .form-group.col-12.col-md-4
+                            label(for='productName') quantity
+                            input#quantity.form-control(type='text' placeholder='quantity' required='' name='quantity')
+                        .form-group.col-12.col-md-4
+                            label(for='productName') price
+                            input#price.form-control(type='text' placeholder='price' required='' name='price')
+                    .row
+                        .form-group.col-12.col-md-4
+                            label(for='productName') purpose
+                            input#purpose.form-control(type='text' placeholder='purpose' required='' name='purpose')
+                        
+                        .form-group.col-12.col-md-4
+                            label(for='productName') explain
+                            input#explain.form-control(type='text' placeholder='explain' required='' name='explain')
+                        .form-group.col-12.col-md-4
+                            label(for='productName') category
+                            input#categoryid.form-control(type='text' placeholder='category' required='' name='categoryid')
+
+                      
+                        .form-group.col-12.col-md-4.mt-4.mt-1
+                            label.form-label(for="formFile") 
+                            input#image.form-control-file(type="file"   required='' name='userPhoto')
+                        .form-group.col-12.col-md-4
+                            label(for='productName') sequenceid
+                            input#sequenceid.form-control(type='text' placeholder='sequenceid'  name='sequenceid')                                  
+                    .row
+                        .col-12.col-md-12
+                            button.btn.btn-primary(type='submit' ) KAYDET
+
+                           
+
+ 
+
+
+
+

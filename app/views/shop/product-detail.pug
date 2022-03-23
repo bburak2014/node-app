@@ -1,0 +1,28 @@
+extend ../layout/main.layout.pug
+block styles
+
+
+block content
+     .row.text-center
+        .col-md-4
+            img(src=`/image/${product.image}`
+                width='100%' ).img-fluid
+        .col-md-8
+            h1 #{product.name}
+            hr
+            p #{product.id}
+            hr
+            p #{product.product_type}
+            hr
+            p #{product.product_group}
+            hr
+            p #{product.company}
+            hr
+            p #{product.explain}
+            hr
+            p Fiyat: #{product.price}
+            hr
+            p #{product.purpose}
+            hr
+            
+            button(type="submit").btn.btn-primary.btn-lg Add to Cart

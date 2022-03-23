@@ -1,0 +1,135 @@
+extend ../layout/main.layout.pug
+
+block styles
+ script(src='/js/alert.js')
+ link.style(rel='stylesheet' href='/css/form.css')
+
+
+
+block content 
+    if(action!=='undefined'&&action==='edit')
+         div.alert.alert-success Ürün güncellenmiştir
+    if(action!=='undefined'&&action==='delete')
+         div.alert.alert-danger Ürün silinmiştir     
+    .container.register.m-5
+        .row
+            h1.text-justify #{title}
+
+            .bs-example.m-5
+                form(action='/admin/add_product' method='post')
+                    .row 
+                        .form-group.col-12.col-md-4
+                            label(for='productName') name
+                            input#name.form-control(type='text' placeholder='name' required='' name='name')
+                        .form-group.col-12.col-md-4
+                            label(for='productName') product_type
+                            input#product_type.form-control(type='text' placeholder='product_type' required='' name='product_type')
+
+
+                        .form-group.col-12.col-md-4
+                            label(for='productName') product_group
+                            input#product_group.form-control(type='text' placeholder='product_group' required='' name='product_group')
+                    .row            
+                        .form-group.col-12.col-md-4
+                            label(for='productName') company
+                            input#company.form-control(type='text' placeholder='company' required='' name='company')
+
+                        .form-group.col-12.col-md-4
+                            label(for='productName') quantity
+                            input#quantity.form-control(type='text' placeholder='quantity' required='' name='quantity')
+                        .form-group.col-12.col-md-4
+                            label(for='productName') price
+                            input#price.form-control(type='text' placeholder='price' required='' name='price')
+                    .row
+                        .form-group.col-12.col-md-4
+                            label(for='productName') purpose
+                            input#purpose.form-control(type='text' placeholder='purpose' required='' name='purpose')
+                        .form-group.col-12.col-md-4
+                            label(for='productName') image
+                            input#image.form-control(type='text' placeholder='image' required='' name='image')
+
+
+                        .form-group.col-12.col-md-4
+                            label(for='productName') explain
+                            input#explain.form-control(type='text' placeholder='explain' required='' name='explain')
+                        .form-group.col-12.col-md-4
+                            label(for='productName') category
+                            input#explain.form-control(type='text' placeholder='category' required='' name='categoryid')
+
+                        .row
+                            .col-12.col-md-12
+                                button.btn.btn-primary(type='submit') KAYDET
+
+
+
+
+
+
+
+
+
+block content2 
+    
+    .row.m-5.tableRow.scrolling-wrapper.row.flex-row.flex-nowrap
+        .col-12.tableRow
+            table.table
+
+                thead.thead-light
+                    tr
+                        th(scope="col") id
+                        th(scope="col") name
+                        th(scope="col") product_type
+                        th(scope="col") product_group
+                        th(scope="col") company
+                        th(scope="col") quantity
+                        th(scope="col") price
+                        th(scope="col") purpose
+                        th(scope="col") image 
+                        th(scope="col") explain
+                        th(scope="col") categoryid
+                        th(scope="col") Manage
+                tbody
+                    tr
+                        each product in products
+                            tr(scope='row') 
+                                td  #{product.id}
+                                td #{product.name}
+                                td #{product.product_type}
+                                td #{product.product_group}
+                                td #{product.company}
+                                td #{product.quantity}
+                                td #{product.price + ' TL'}
+                                td #{product.purpose}
+                                td 
+                                     img(src=`/image/${product.image}
+                                     ` width='80')
+                                       
+                                td #{product.explain}
+                                td #{product.categoryid}
+
+                                td 
+                                    a(href=`/admin/products/${product.id}`).btn.btn-outlite.btn-primary.m-1 Edit
+                                    form(action='/admin/delete-product' method='POST')
+                                        input(type="hidden" name="productid" value=`${product.id}`)
+                                        button(type="submit").btn.btn-danger.btn-sm.m-1 Delete
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+//-burası kategori için
+extend ../layout/main.layout.pug
+block styles
+  script(src='/js/index.js') 
+
+
+block content
+  .col-10
+    .mt-5
+      #carouselExampleInterval.carousel.slide(data-ride='carousel')
+        .carousel-inner
+          .carousel-item.active(data-interval='10000')
+            img.d-block.w-100(src='../image/1.jpg' style='max-height: 500px' alt='...')
+          .carousel-item(data-interval='2000')
+            img.d-block.w-100(src='../image/2.jpg' style='max-height: 500px' alt='...')
+          .carousel-item
+            img.d-block.w-100(src='../image/3.jpg' style='max-height: 500px' alt='...')
+        a.carousel-control-prev(href='#carouselExampleInterval' role='button' data-slide='prev')
+          span.carousel-control-prev-icon(aria-hidden='true')
+          span.sr-only Previous
+        a.carousel-control-next(href='#carouselExampleInterval' role='button' data-slide='next')
+          span.carousel-control-next-icon(aria-hidden='true')
+          span.sr-only Next
+
+
+block  content2
+  each product in products
+    .col-md-3.mt-5
+      .card-deck
+        .card
+          a(href="#")
+            img.card-img-top(src=`/image/${product.image}` alt=`Card image cap`) 
+
+            .card-body
+              h5.card-title 
+                a(href="#") #{product.name}
+              p.card-text #{product.price +' TL'}
+              p.card-text  #{product.explain}     
+              .card-footer.text-center 
+                a(href=`/products/${product.id}`).btn.btn-outline-primary.btn-sm.m-1.mr-4 Details      
+                .btn.btn-outline-primary.btn-sm.m-1.addToCardBtn Add to card          
+block  content3

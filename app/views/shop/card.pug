@@ -1,0 +1,108 @@
+extend ../layout/main.layout.pug
+block styles
+  script(src='/js/card.js') 
+  link.style(rel='stylesheet' href='/css/card.css')
+
+
+block content
+    .card
+         h5.card-header Payment Page
+         .card-body
+            .row#cardmenum
+         .row
+             .col-3#payment
+             h5.m-5
+                a.btn.btn-primary(data-toggle="collapse", href="#collapseExample", role="button", aria-expanded="false", aria-controls="collapseExample") Payment
+             .collapse#collapseExample
+                .card.card-body.m-5.w-80.p-3
+                    form(method='post' action='/card').font-weight-bold
+                        h3.text-justify-center.m-5  Payment
+                        .form-row
+                            .col-md-4.mb-3
+                            label(for="validationDefault01") First name
+                            input.form-control#validationDefault01(type="text", placeholder="First name", required ,name="First_name")
+                            .col-md-4.mb-3
+                            label(for="validationDefault02") Last name
+                            input.form-control#validationDefault02(type="text", placeholder="Last name",  required,name="Last_name")
+                            .col-md-4.mb-3
+                            label(for="validationDefaultUsername") E_mail
+                            .input-group
+                                .input-group-prepend
+                                span.input-group-text#inputGroupPrepend2 @
+                                input.form-control#validationDefaultUsername(type="text", placeholder="E_mail", aria-describedby="inputGroupPrepend2", required,name="E_mail")
+                        .form-row
+                            .col-md-4.mb-3
+                            label(for="validationDefault03") Card Number
+                            input.form-control#validationDefault03(type="text", placeholder="Card Number",  required, name="Card_Number")
+                            .col-md-4.mb-3
+                            label(for="validationDefault04") Card Holder
+                            input.form-control#validationDefault04(type="text", placeholder="Card Holder", required,    name="Card_Holder")
+                            .col-md-4.mb-3
+                            label(for="validationDefault05") expireMonth
+                            input.form-control#validationDefault05(type="text", placeholder="expireMonth", required,  name="expireMonth")
+                            .col-md-4.mb-3
+                            label(for="validationDefault05") expireYear
+                            input.form-control#validationDefault05(type="text", placeholder="expireYear", required,  name="expireYear")                                                        
+                            .col-md-4.mb-3
+                            label(for="validationDefault05") CVC
+                            input.form-control#validationDefault05(type="text", placeholder="CCV", required,  name="CVC_number")
+                            .col-md-4.mb-3
+                            label(for="validationDefault05") BillingAddress 
+                            input.form-control#validationDefault05(type="text", placeholder="billingAddress", required,  name="billingAddress")
+                            .col-md-4.mb-3
+                            label(for="validationDefault05") shippingAddress
+                            input.form-control#validationDefault05(type="text", placeholder="shippingAddress", required,  name="shippingAddress")
+                            .col-md-4.mb-3
+                            label(for="validationDefault05") city
+                            input.form-control#validationDefault05(type="text", placeholder="city", required,  name="city")
+                            .col-md-4.mb-3
+                            label(for="validationDefault05") country
+                            input.form-control#validationDefault05(type="text", placeholder="country", required,  name="country")
+                        .form-row.d-none   
+                            .col-md-4.mb-3.d-none
+                            label(for="validationDefault05") sales_product_name 
+                            input.form-control#sales_product_name(type="text", placeholder="sales_product_name",  name="sales_product_name")
+                            .col-md-4.mb-3.d-none
+                            label(for="validationDefault05") shippingAddress
+                            input.form-control#sales_product_group(type="text", placeholder="sales_product_group",   name="sales_product_group")
+                            .col-md-4.mb-3.d-none
+                            label(for="validationDefault05") sales_product_type
+                            input.form-control#sales_product_type(type="text", placeholder="sales_product_type",   name="sales_product_type")
+                            .col-md-4.mb-3.d-none
+                            label(for="validationDefault05") userid
+                            input.form-control#userid(type="text" ,  name="userid")
+                            .col-md-4.mb-3.d-none
+                            label(for="validationDefault05") userid
+                            input.form-control#userid(type="text" ,  name="userid")
+                        .form-row.align-items-center.w-100
+                        .form-row.align-items-center.w-100
+                            .col-md-12.mb-3.mt-3.w-100
+                                label.mr-sm-2.sr-only(for='inlineFormCustomSelect') Taksit Sayısı...
+                                select#inlineFormCustomSelect.custom-select.mr-sm-2(required,name="installment")
+                                    option(selected='') Taksit Sayısı...
+                                    option(value='1') 1
+                                    option(value='2') 2
+                                    option(value='3') 3
+                                    option(value='6') 6
+                                    option(value='9') 9
+                                    option(value='12') 12
+                    
+                        .form-group
+                            .form-check
+                            input.form-check-input#invalidCheck2(type="checkbox", required)
+                            label.form-check-label(for="invalidCheck2").
+                                
+                                Agree to terms and conditions
+                                
+                        button.btn.btn-primary(type="submit") Payment with Iyzico .d-none
+
+                                               
+
+    
+             .col-3
+      
+                
+                 
+                
+
+

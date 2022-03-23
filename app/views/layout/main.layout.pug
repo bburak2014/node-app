@@ -1,0 +1,147 @@
+
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv="Content-Type", content="text/html; charset=utf-8")  
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' integrity='sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==' crossorigin='anonymous' referrerpolicy='no-referrer')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' integrity='sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==' crossorigin='anonymous' referrerpolicy='no-referrer')
+  link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+  link(rel='stylesheet' href='/css/add_product.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+  script(src="node_modules/image-to-base64/image-to-base64.min.js")
+  script(src="/node_modules/jquery/dist/jquery.min.js")
+  script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+    
+  script(type='text/javascript' src='https://code.jquery.com/jquery-3.5.1.min.js')
+  // DevExtreme theme
+  link(rel='stylesheet' href='https://cdn3.devexpress.com/jslib/21.1.5/css/dx.light.css')
+  // DevExtreme library
+  script(type='text/javascript' src='https://cdn3.devexpress.com/jslib/21.1.5/js/dx.all.js')
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We' crossorigin='anonymous')
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.4.0/polyfill.min.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.1.1/exceljs.min.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js")
+
+  link.style(rel='stylesheet' href='/css/footer.css')
+  link.style(rel='stylesheet' href='/css/form.css')
+  link.style(rel='stylesheet' href='/css/mainlayout.css')
+  block styles
+  block scripts
+  title #{title}
+
+nav.navbar.navbar-expand-lg.navbar-light(style='background-color: #89c9f759')
+  a.navbar-brand(href='#') Navbar
+   
+               
+  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+      li.nav-item.active
+        a.nav-link(href='/')
+          | Home 
+          span.sr-only (current)
+      li.nav-item
+        a.nav-link(href='/admin/add_product') Add Product
+      li.nav-item
+        a.nav-link(href='/admin/products') Admin Product
+      li.nav-item
+        a.nav-link(href='/admin/SalesReport') Sales Report
+    form.form-inline.my-2.my-lg-0
+      .formCard 
+          p 
+          
+            button.i.fas.fa-cart-plus.butonsepet#sptamnt(type='button' data-toggle='collapse' data-target='#multiCollapseExample2'
+              aria-expanded='false' aria-controls='multiCollapseExample2') Sepet/ --
+          .row
+            .col
+              #multiCollapseExample2.collapse.multi-collapse.sepetbody
+                .card.card-body
+                   <div class="sepet" id="sepetim" style="min-width:100%" ></div>
+                    <div class="m-2 text-center " id="toplam"  >Sepetiniz Boş</div>
+                    a(href=`/card`)#ToCard.btn.btn-primary.btn-lg.btn-sm.m-1.mr-4.pr.m-3 Sepete Git
+      input.form-control.mr-sm-2(type='search' placeholder='Search' aria-label='Search')
+      button.btn.btn-outline-success.my-2.my-sm-0(type='submit')
+        | Search
+.row.mt-5.mb-5
+  .col-4.col-md-2.vertmenu 
+      a(href=`/categories/1`).list-group-item.vma Cep telefonu
+      a(href=`/categories/2`).list-group-item.vma Laptop
+      a(href=`/categories/3`).list-group-item.vma Elektronik
+  
+
+  .col-7.col-md-9.justify-content-center.text-center
+    block content
+  .col-1 
+    block content4
+
+.row.mt-5
+  block content2
+.row.mt-5
+  block content3
+
+.row.mt-5
+.row.mt-5
+.row.ftr
+  .container-fluid.pb-0.mb-0.justify-content-center.text-light
+    footer
+      .row.my-5.justify-content-center.py-5
+        .col-11
+          .row
+            .col-xl-8.col-md-4.col-sm-4.col-12.my-auto.mx-auto.a
+              h3.text-muted.mb-md-0.mb-5.bold-text Pepper.
+            .col-xl-2.col-md-4.col-sm-4.col-12
+              h6.mb-3.mb-lg-4.bold-text
+                b MENU
+              ul.list-unstyled
+                a(href='#')
+                  li Home
+                a(href='#')
+                  li About
+                a(href='#')
+                  li Blog
+                a(href='#')
+                  li Portfolio
+            .col-xl-2.col-md-4.col-sm-4.col-12
+              h6.mb-3.mb-lg-4.text-muted.bold-text.mt-sm-0.mt-5
+                b ADDRESS
+              p.mb-1 605, RATAN ICON BUILDING
+              p SEAWOODS SECTOR
+          .row
+            .col-xl-8.col-md-4.col-sm-4.col-auto.my-md-0.mt-5.order-sm-1.order-3.align-self-end
+              p.social.text-muted.mb-0.pb-0.bold-text
+                span.mx-2
+                  i.fa.fa-facebook(aria-hidden='true')
+                span.mx-2
+                  i.fa.fa-linkedin-square(aria-hidden='true')
+                span.mx-2
+                  i.fa.fa-twitter(aria-hidden='true')
+                span.mx-2
+                  i.fa.fa-instagram(aria-hidden='true')
+              small.rights
+                span &reg;
+                |  Pepper All Rights Reserved.
+            .col-xl-2.col-md-4.col-sm-4.col-auto.order-1.align-self-end
+              h6.mt-55.mt-2.text-muted.bold-text
+                b ANIRUDH SINGLA
+              small
+                span
+                  i.fa.fa-envelope(aria-hidden='true')
+                |  anirudh@gmail.com
+            .col-xl-2.col-md-4.col-sm-4.col-auto.order-2.align-self-end.mt-3
+              h6.text-muted.bold-text
+                b RISHABH SHEKHAR
+              small
+                span
+                  i.fa.fa-envelope(aria-hidden='true')
+                |  rishab@gmail.com
+
+
+script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM' crossorigin='anonymous')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js') ;

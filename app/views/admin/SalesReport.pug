@@ -1,0 +1,91 @@
+doctype html
+html(xmlns='http://www.w3.org/1999/xhtml')
+  head
+    title DevExtreme Demo
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(http-equiv='Content-Type' content='text/html; charset=utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0')
+    link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' integrity='sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==' crossorigin='anonymous' referrerpolicy='no-referrer')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' integrity='sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==' crossorigin='anonymous' referrerpolicy='no-referrer')
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+    link(rel='stylesheet' href='/css/add_product.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+    script(src="node_modules/image-to-base64/image-to-base64.min.js")
+    script(src="/node_modules/jquery/dist/jquery.min.js")
+    script(src="https://code.jquery.com/jquery-3.6.0.min.js")  
+    link.style(rel='stylesheet' href='/css/footer.css')
+    link.style(rel='stylesheet' href='/css/form.css')
+    link.style(rel='stylesheet' href='/css/mainlayout.css')  
+    link.style(rel='stylesheet' href='/css/report.css')
+
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+    script.
+      window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))
+    link(rel='stylesheet' type='text/css' href='https://cdn3.devexpress.com/jslib/21.1.5/css/dx.common.css')
+    link(rel='stylesheet' type='text/css' href='https://cdn3.devexpress.com/jslib/21.1.5/css/dx.light.css')
+    script(src='https://cdn3.devexpress.com/jslib/21.1.5/js/dx.all.js')
+    script(src='/js/data.js')
+    link(rel='stylesheet' type='text/css' href='styles.css')
+    script(src='/js/SalesReport.js')
+  body
+    row
+      nav.navbar.navbar-expand-lg.navbar-light(style='background-color: #89c9f759')
+        a.navbar-brand(href='#') Navbar
+        
+                    
+        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.mr-auto
+            li.nav-item.active
+              a.nav-link(href='/')
+                | Home 
+                span.sr-only (current)
+            li.nav-item
+              a.nav-link(href='/admin/add_product') Add Product
+            li.nav-item
+              a.nav-link(href='/admin/products') Admin Product
+            li.nav-item
+              a.nav-link(href='/admin/SalesReport') Sales Report
+          form.form-inline.my-2.my-lg-0
+            .formCard 
+                p 
+                
+                  button.i.fas.fa-cart-plus.butonsepet#sptamnt(type='button' data-toggle='collapse' data-target='#multiCollapseExample2'
+                    aria-expanded='false' aria-controls='multiCollapseExample2') Sepet/ --
+                .row
+                  .col
+                    #multiCollapseExample2.collapse.multi-collapse.sepetbody
+                      .card.card-body
+                        <div class="sepet" id="sepetim" style="min-width:100%" ></div>
+                          <div class="m-2 text-center " id="toplam"  >Sepetiniz Boş</div>
+                          a(href=`/card`)#ToCard.btn.btn-primary.btn-lg.btn-sm.m-1.mr-4.pr.m-3 Sepete Git
+            input.form-control.mr-sm-2(type='search' placeholder='Search' aria-label='Search')
+            button.btn.btn-outline-success.my-2.my-sm-0(type='submit')
+              | Search 
+    
+    
+      .row.mt-5.mb-5
+        .col-4.col-md-2.vertmenu 
+            a(href=`/categories/1`).list-group-item.vma Cep telefonu
+            a(href=`/categories/2`).list-group-item.vma Laptop
+            a(href=`/categories/3`).list-group-item.vma Elektronik
+        
+
+        .col-8.col-md-9.justify-content-center.text-center.overflow-auto.report.scrolling-wrapper
+          container.dx-viewport
+            .demo-container
+              #pivotgrid-demo
+                .desc-container
+                  | Expand, filter, sort and perform other operations on the PivotGrid’s columns and rows.
+                  a(onclick='window.location.reload()') Refresh
+                  |                 the web page and note that the PivotGrid’s state is automatically persisted.
+                #reset
+                #pivotgrid
+         
+
+    
+
+

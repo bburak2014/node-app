@@ -1,0 +1,94 @@
+.navbar{
+    width: 100%;
+}
+.sepetbody{
+    margin-top:20%;
+     z-index:1;
+    position: absolute;
+    right: 10%;
+    
+
+
+
+ }
+ .sepet{
+    margin-top:10%;
+      right: 10%;
+      
+
+
+ }
+ .butonsepet{
+     margin-right:2vw;
+     margin-top:20%;
+     padding:  5%;
+     border: 2px solid rgb(91, 91, 219);
+      border-radius: 5px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      text-align: center;
+      color: rgb(91, 91, 219);
+ }
+ @media only screen and (max-width: 992px) {
+    .sepetbody {
+        margin-left:1vw;
+        float: right; 
+
+
+     }
+    .sepet{
+        margin-right:0vw;
+        float: right; 
+
+
+ 
+    }
+    .butonsepet{
+        margin-right:0vw;  
+        float: right; 
+    }
+  }
+
+ 
+ .butonsepet:hover{
+     background-color: rgb(91, 91, 219);
+     color: white;
+     border: 2px solid rgb(242, 242, 245);
+
+ }
+  
+ /* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+ .closebtn{
+   background-color: transparent;
+   border: transparent;
+   color: red;
+   opacity: 0.5;
+ }
+
+ .closebtn:hover{
+   opacity: 1;
+ }
+ #toplam{
+   font-weight: bold;
+   text-align: center;
+   font-size: 16px;
+
+ }
+ 
